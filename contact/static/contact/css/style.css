@@ -1,0 +1,12 @@
+h1 {
+  color: rgba(145, 18, 18, 0.91); /* texto vibrante */
+  background-color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 3rem; /* tamanho grande e chamativo */
+  text-align: center; /* centralizado */
+  padding: 20px 40px; /* espaço interno confortável */
+  border-radius: 15px; /* cantos arredondados */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* sombra suave */
+  letter-spacing: 2px; /* espaçamento entre letras */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* animação ao passar o mouse */
+}
