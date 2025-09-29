@@ -7,7 +7,7 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = 'id', 'first_name', 'phone', 'email', 'last_name',
     ordering = 'id',
     search_fields = 'id', 'first_name', 'id',
-    list_per_page = 1
+    list_per_page = 100
     list_max_show_all = 500
     list_editable = 'last_name', 'first_name',
     list_display_links = 'phone',
