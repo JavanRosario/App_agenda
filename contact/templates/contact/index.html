@@ -7,6 +7,8 @@
     <title>DJANGO</title>
   </head>
   <body>
-    <h1>TESTANDO DJANGO</h1>
+    <main class="content">
+      {% for contact in contacts %} {{contact.first_name}} <br />{% endfor %}
+    </main>
   </body>
 </html>
