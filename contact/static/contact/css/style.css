@@ -1,12 +1,174 @@
-h1 {
-  color: rgba(145, 18, 18, 0.91); /* texto vibrante */
-  background-color: #fff;
-  font-family: "Inter", sans-serif;
-  font-size: 3rem; /* tamanho grande e chamativo */
-  text-align: center; /* centralizado */
-  padding: 20px 40px; /* espaço interno confortável */
-  border-radius: 15px; /* cantos arredondados */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* sombra suave */
-  letter-spacing: 2px; /* espaçamento entre letras */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* animação ao passar o mouse */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f8fafc;
+  color: #334155;
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.responsive_table {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.contacts_table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table_caption {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e293b;
+  padding: 1.5rem;
+  text-align: left;
+  background-color: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  text-transform: capitalize;
+}
+
+/* Header styles */
+.table_row_reader {
+  background-color: #64748b;
+}
+
+.table_reader {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #475569;
+}
+
+/* Table body styling */
+tbody {
+  background: white;
+}
+
+.table_row:not(.table_row_reader) {
+  border-bottom: 1px solid #e2e8f0;
+  transition: background-color 0.2s ease;
+}
+
+.table_row:not(.table_row_reader):hover {
+  background-color: #f1f5f9;
+}
+
+.table_row:not(.table_row_reader):last-child {
+  border-bottom: none;
+}
+
+/* Table cell styling */
+.table_cel {
+  padding: 1rem 1.5rem;
+  font-size: 0.875rem;
+  color: #475569;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.table_row:last-child .table_cel {
+  border-bottom: none;
+}
+
+/* Link styling for ID column */
+.table_link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.table_link:hover {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+.table_link:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Hover effect for entire row */
+.table_row:not(.table_row_reader):hover .table_cel {
+  color: #1e293b;
+}
+
+.table_row:not(.table_row_reader):hover .table_link {
+  color: #1d4ed8;
+}
+
+/* Empty state styling */
+tbody:empty::after {
+  content: "Nenhum contato encontrado";
+  display: block;
+  text-align: center;
+  padding: 2rem;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  
+  .table_caption {
+    font-size: 1.25rem;
+    padding: 1rem;
+  }
+  
+  .table_reader,
+  .table_cel {
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .responsive_table {
+    overflow-x: auto;
+  }
+  
+  .contacts_table {
+    min-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .table_reader,
+  .table_cel {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+  
+  .table_caption {
+    font-size: 1.125rem;
+    padding: 0.75rem;
+  }
+  
+  .table_link {
+    padding: 0.125rem 0.25rem;
+    font-size: 0.75rem;
+  }
 }
