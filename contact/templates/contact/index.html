@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +9,35 @@
   </head>
   <body>
     <main class="content">
-      {% for contact in contacts %} {{contact.first_name}} <br />{% endfor %}
+      <div class="responsive_table">
+        <table class="contacts_table">
+          <caption class="table_caption">
+            contacts
+          </caption>
+          <thead>
+            <tr class="table_row table_row_reader">
+              <th class="table_reader">ID</th>
+              <th class="table_reader">First Name</th>
+              <th class="table_reader">Last Name</th>
+              <th class="table_reader">Phone</th>
+              <th class="table_reader">Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for contact in contacts %}
+            <tr class="table_row">
+              <td class="table_cel">
+                <a href="#" class="table_link"> {{ contact.id }} </a>
+              </td>
+              <td class="table_cel">{{ contact.first_name }}</td>
+              <td class="table_cel">{{ contact.last_name }}</td>
+              <td class="table_cel">{{ contact.phone }}</td>
+              <td class="table_cel">{{ contact.email }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
     </main>
   </body>
 </html>
