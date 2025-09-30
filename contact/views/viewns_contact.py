@@ -3,9 +3,9 @@ from contact.models import Contact
 
 
 def index(request):
-    contacts = Contact.objects.all()
+    contacts = Contact.objects.all().filter(show=True).order_by('-id')
     context = {
-        'contacts':contacts,
+        'contacts': contacts,
     }
     return render(
         request,
