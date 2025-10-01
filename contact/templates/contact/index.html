@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="static/contact/css/style.css" />
-    <title>DJANGO</title>
+    <title>Contacs App</title>
   </head>
   <body>
     <main class="content">
@@ -27,7 +27,7 @@
             {% for contact in contacts %}
             <tr class="table_row">
               <td class="table_cel">
-                <a href="#" class="table_link"> {{ contact.id }} </a>
+                <a href="{% url "contact:contact" contact.id %}" class="table_link"> {{ contact.id }} </a>
               </td>
               <td class="table_cel">{{ contact.first_name }}</td>
               <td class="table_cel">{{ contact.last_name }}</td>
