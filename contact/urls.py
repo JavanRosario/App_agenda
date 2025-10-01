@@ -14,6 +14,10 @@ urlpatterns = [
         '',
         index,
         name='index'
+    ),path(
+        'search/',
+        index,
+        name='search'
     ),
 ]
 
