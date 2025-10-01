@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/contact/css/style.css" />
+    <title>Contacs App</title>
+  </head>
+  <body>
+    <main class="content">
+      <div class="single_contact">
+        <h1 class="single_contact_name">
+          {{contact.first_name}} {{contact.last_name}}
+        </h1>
+        <p><b>ID:</b>{{contact.id}}</p>
+        <p><b>E-mail:</b>{{contact.email}}</p>
+        <p><b>Phone:</b>{{contact.phone}}</p>
+        <p><b>Created Date:</b>{{contact.created_date}}</p>
+        <p><b>Description:</b>{{contact.description}}</p>
+        <p><b>Category:</b>{{contact.category.name}}</p>
+      </div>
+    </main>
+  </body>
+</html>
