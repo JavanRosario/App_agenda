@@ -4,10 +4,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="static/contact/css/style.css" />
-    <title>Contacs App</title>
+    <link rel="stylesheet" href="{% static 'contact/css/style.css' %}" />
+    <title>{{single_title}}Agenda</title>
   </head>
   <body>
+    {% include "partials/_header.html" %}
+
     <main class="content">
       <div class="single_contact">
         <h1 class="single_contact_name">
