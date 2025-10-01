@@ -4,7 +4,7 @@ from .models import Contact, Category
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
-    list_display = 'id', 'first_name', 'phone', 'email', 'last_name','show'
+    list_display = 'id', 'first_name', 'phone', 'email', 'last_name','show',
     ordering = 'id',
     search_fields = 'id', 'first_name', 'id',
     list_per_page = 100
