@@ -9,6 +9,7 @@
   {% include "partials/_header.html" %}
 
     <main class="content">
+      {% if contacts %}
       <div class="responsive_table">
         <table class="contacts_table">
           <caption class="table_caption">
@@ -38,6 +39,11 @@
           </tbody>
         </table>
       </div>
+      {% else %}<h1 class="single_contact_name">
+          Nenhum contato encontrado
+        </h1>
+      </div>
+      {% endif %}
     </main>
   </body>
 </html>
