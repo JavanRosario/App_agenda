@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index, single_contact
+from .views import index, single_contact, search
 from django.conf.urls.static import static
 from django.conf import settings
 app_name = 'contact'
@@ -14,9 +14,9 @@ urlpatterns = [
         '',
         index,
         name='index'
-    ),path(
+    ), path(
         'search/',
-        index,
+        search,
         name='search'
     ),
 ]
