@@ -9,11 +9,11 @@
   {% include "partials/_header.html" %}
 
     <main class="content">
-      {% if contacts %}
+      {% if page_obj %}
       <div class="responsive_table">
         <table class="contacts_table">
           <caption class="table_caption">
-            contacts
+            Contatos
           </caption>
           <thead>
             <tr class="table_row table_row_reader">
@@ -25,7 +25,7 @@
             </tr>
           </thead>
           <tbody>
-            {% for contact in contacts %}
+            {% for contact in page_obj %}
             <tr class="table_row">
               <td class="table_cel">
                 <a href="{% url "contact:contact" contact.id %}" class="table_link"> {{ contact.id }} </a>
@@ -44,6 +44,7 @@
         </h1>
       </div>
       {% endif %}
-    </main>
+    </main> 
+    {% include "partials/_pagination.html" %}
   </body>
 </html>
