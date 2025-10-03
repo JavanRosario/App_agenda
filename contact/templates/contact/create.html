@@ -3,18 +3,31 @@
 <main class="content">
   <h2>Cadastro</h2>
   <div class="form_warper">
-    <form action="" method="POST" enctype="multipart/form_data">
+    <form action="{% url "contact:create" %}" method="POST" enctype="multipart/form_data">
+      {% csrf_token %}
       <div class="form_content">
+        {% for field in form %}
         <div class="form_group">
-          <label for="id_first_name">LABEK</label>
-          <input type="text" name="first_name" maxlenght="255">
+          <label for="{{field.id_for_label}}">{{field.label}}</label>
+          {{field}}
+          {{field.errors}}
         </div>
+        {% endfor %}
       </div>
+       {% if form.non_field_errors %}
+        <div class="form-content">
+          <div class="form-group">
+            <div class="message error">
+              {{ form.non_field_errors }}
+            </div>
+          </div>
+        </div>
+      {% endif %}
       <div class="form_content">
         <div class="form_group">
           <button class="btn">
             Enviar
-          </button> 
+          </button>
         </div>
       </div>
     </form>
