@@ -1,25 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: color 0.2s ease, background-color 0.2s ease,
-    border-color 0.2s ease;
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    sans-serif;
-  background-color: #f8fafc;
-  color: #334155;
-  line-height: 1.6;
+  font-family: "Inter", Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.5;
 }
 
 .header {
   background: #fff;
-  border-bottom: 1px solid #e2e8f0;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #ddd;
   padding: 1rem 2rem;
   margin-bottom: 2rem;
   display: flex;
@@ -32,17 +28,17 @@ body {
 .header_heading {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #1e293b;
+  color: #222;
 }
 
 .header_link,
 .table_link {
-  color: #3b82f6;
+  color: #0066cc;
   text-decoration: none;
 }
 
 .header_link:hover {
-  color: #1d4ed8;
+  text-decoration: underline;
 }
 
 .nav_menu,
@@ -62,17 +58,15 @@ body {
 }
 
 .menu_link {
-  color: #64748b;
+  color: #666;
   text-decoration: none;
   padding: 0.5rem 1rem;
-  border-radius: 6px;
   font-weight: 500;
-  transition: all 0.2s ease;
 }
 
 .menu_link:hover {
-  background-color: #f1f5f9;
-  color: #1e293b;
+  background-color: #f0f0f0;
+  color: #222;
 }
 
 .search form {
@@ -87,20 +81,18 @@ body {
 .form_group input[type="password"],
 .form_group textarea,
 .form_group select {
-  padding: 0.75rem 1rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 0.875rem;
-  font-family: "Inter", sans-serif;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: "Inter", Arial, sans-serif;
   background-color: #fff;
-  color: #334155;
-  transition: all 0.2s ease;
+  color: #333;
   width: 100%;
 }
 
 .search_input {
-  border-radius: 6px;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   min-width: 200px;
   width: auto;
 }
@@ -110,24 +102,13 @@ body {
 .form_group textarea:focus,
 .form_group select:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-}
-
-.search_input:focus {
-  transform: none;
-}
-
-.form_group input:focus,
-.form_group textarea:focus,
-.form_group select:focus {
-  transform: translateY(-1px);
+  border-color: #0066cc;
 }
 
 .search_input::placeholder,
 .form_group input::placeholder,
 .form_group textarea::placeholder {
-  color: #94a3b8;
+  color: #999;
 }
 
 .content {
@@ -139,7 +120,7 @@ body {
 .content h2 {
   font-size: 1.75rem;
   font-weight: 600;
-  color: #1e293b;
+  color: #222;
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -148,9 +129,8 @@ body {
 .form_warper,
 .single_contact {
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  border: 1px solid #ddd;
 }
 
 .responsive_table {
@@ -165,27 +145,26 @@ body {
 .table_caption {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #1e293b;
+  color: #222;
   padding: 1.5rem;
   text-align: left;
-  background-color: #f8fafc;
-  border-bottom: 1px solid #e2e8f0;
-  text-transform: capitalize;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
 }
 
 .table_row_reader {
-  background-color: #042657b8;
+  background-color: #333;
 }
 
 .table_reader {
   padding: 1rem 1.5rem;
   text-align: left;
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid #475569;
+  border-bottom: 1px solid #555;
 }
 
 tbody {
@@ -193,31 +172,18 @@ tbody {
 }
 
 .table_row:not(.table_row_reader) {
-  border-bottom: 1px solid #e2e8f0;
-  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #eee;
 }
 
 .table_row:not(.table_row_reader):hover {
-  background-color: #f1f5f9;
-}
-
-.table_row:not(.table_row_reader):hover .table_cel {
-  color: #1e293b;
-}
-
-.table_row:not(.table_row_reader):hover .table_link {
-  color: #1d4ed8;
-}
-
-.table_row:not(.table_row_reader):last-child {
-  border-bottom: none;
+  background-color: #f9f9f9;
 }
 
 .table_cel {
   padding: 1rem 1.5rem;
-  font-size: 0.875rem;
-  color: #475569;
-  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.9rem;
+  color: #555;
+  border-bottom: 1px solid #f5f5f5;
   vertical-align: middle;
 }
 
@@ -228,15 +194,10 @@ tbody {
 .table_link {
   font-weight: 500;
   padding: 0.25rem 0.5rem;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-  display: inline-block;
 }
 
 .table_link:hover {
-  background-color: #dbeafe;
-  color: #1d4ed8;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 tbody:empty::after {
@@ -244,7 +205,7 @@ tbody:empty::after {
   display: block;
   text-align: center;
   padding: 2rem;
-  color: #94a3b8;
+  color: #999;
   font-style: italic;
 }
 
@@ -257,23 +218,23 @@ tbody:empty::after {
 .single_contact_name {
   font-size: 2rem;
   font-weight: 600;
-  color: #1e293b;
+  color: #222;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid #ddd;
 }
 
 .single_contact p {
   margin-bottom: 1rem;
   font-size: 0.95rem;
-  color: #475569;
+  color: #555;
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
 }
 
 .single_contact p b {
-  color: #1e293b;
+  color: #222;
   font-weight: 600;
   min-width: 120px;
   flex-shrink: 0;
@@ -289,11 +250,6 @@ tbody:empty::after {
   align-items: center;
   margin: 2rem 0;
   padding: 1rem;
-  animation: fadeInUp 0.3s ease-out;
-}
-
-.pagination:hover .step-links {
-  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 .step-links {
@@ -302,19 +258,16 @@ tbody:empty::after {
   gap: 0.5rem;
   background: #fff;
   padding: 0.75rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  border: 1px solid #ddd;
 }
 
 .step-links a {
-  color: #3b82f6;
+  color: #0066cc;
   text-decoration: none;
   padding: 0.5rem 0.75rem;
-  border-radius: 6px;
   font-weight: 500;
-  font-size: 0.875rem;
-  transition: all 0.2s ease;
+  font-size: 0.9rem;
   border: 1px solid transparent;
   min-width: 44px;
   text-align: center;
@@ -324,49 +277,25 @@ tbody:empty::after {
 }
 
 .step-links a:hover {
-  background-color: #f1f5f9;
-  color: #1e293b;
-  border-color: #e2e8f0;
-  transform: translateY(-1px);
-}
-
-.step-links a:active,
-.btn:active {
-  transform: translateY(0);
-}
-
-.step-links a[href*="page=1"]:first-child,
-.step-links a[href*="page="]:last-child {
-  font-weight: 600;
-}
-
-.step-links a[href*="page=1"]:first-child:before {
-  content: "«";
-  margin-right: 0.25rem;
-}
-
-.step-links a[href*="page="]:last-child:after {
-  content: "»";
-  margin-left: 0.25rem;
+  background-color: #f0f0f0;
+  color: #222;
+  border-color: #ddd;
 }
 
 .step-links .current {
-  color: #1e293b;
+  color: #222;
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   padding: 0.5rem 1rem;
-  background-color: #f8fafc;
-  border-radius: 6px;
-  border: 1px solid #e2e8f0;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
   margin: 0 0.5rem;
-  white-space: nowrap;
 }
 
 .form_warper {
   padding: 2rem;
   max-width: 600px;
   margin: 0 auto;
-  animation: fadeInUp 0.3s ease-out;
 }
 
 .form_content {
@@ -376,7 +305,7 @@ tbody:empty::after {
 .form_content:last-child {
   margin-bottom: 0;
   padding-top: 1.5rem;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid #ddd;
 }
 
 .form_group {
@@ -386,9 +315,9 @@ tbody:empty::after {
 }
 
 .form_group label {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  color: #374151;
+  color: #333;
   text-transform: uppercase;
   letter-spacing: 0.025em;
 }
@@ -396,7 +325,7 @@ tbody:empty::after {
 .form_group input:hover,
 .form_group textarea:hover,
 .form_group select:hover {
-  border-color: #cbd5e1;
+  border-color: #999;
 }
 
 .form_group textarea {
@@ -406,11 +335,6 @@ tbody:empty::after {
 
 .form_group select {
   cursor: pointer;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-  background-position: right 0.5rem center;
-  background-repeat: no-repeat;
-  background-size: 1.5em 1.5em;
-  padding-right: 2.5rem;
 }
 
 .form_row {
@@ -419,64 +343,91 @@ tbody:empty::after {
   gap: 1rem;
 }
 
+/* Django Form Errors */
 .form_group input.error,
 .form_group textarea.error,
 .form_group select.error {
-  border-color: #ef4444;
-  background-color: #fef2f2;
+  border-color: #d32f2f;
+  background-color: #ffebee;
 }
 
 .form_group input.error:focus,
 .form_group textarea.error:focus,
 .form_group select.error:focus {
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+  border-color: #d32f2f;
 }
 
-.form_group input.success,
-.form_group textarea.success,
-.form_group select.success {
-  border-color: #10b981;
-  background-color: #f0fdf4;
-}
-
+.form_group .errorlist,
 .form_error {
-  color: #ef4444;
-  font-size: 0.75rem;
+  color: #d32f2f;
+  font-size: 0.8rem;
+  font-weight: 500;
   margin-top: 0.25rem;
 }
 
+.form_group .errorlist li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.message,
 .form_message {
   padding: 0.75rem 1rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  font-size: 0.875rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
   font-weight: 500;
+  border-left: 4px solid;
 }
 
+.message.success,
 .form_message.success {
-  background-color: #dcfce7;
-  color: #166534;
-  border: 1px solid #bbf7d0;
+  background-color: #e8f5e8;
+  color: #2e7d32;
+  border-left-color: #4caf50;
 }
 
+.message.error,
 .form_message.error {
-  background-color: #fef2f2;
-  color: #dc2626;
-  border: 1px solid #fecaca;
+  background-color: #ffebee;
+  color: #d32f2f;
+  border-left-color: #f44336;
+}
+
+.message.warning,
+.form_message.warning {
+  background-color: #fff3e0;
+  color: #ef6c00;
+  border-left-color: #ff9800;
+}
+
+.message.info,
+.form_message.info {
+  background-color: #e3f2fd;
+  color: #1565c0;
+  border-left-color: #2196f3;
+}
+
+.form_group input:disabled,
+.form_group textarea:disabled,
+.form_group select:disabled {
+  background-color: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .btn {
-  background-color: #3b82f6;
+  background-color: #0066cc;
   color: #fff;
   border: none;
   padding: 0.75rem 2rem;
-  border-radius: 8px;
-  font-size: 0.875rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
   font-weight: 500;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   min-width: 120px;
   display: inline-flex;
   align-items: center;
@@ -485,19 +436,12 @@ tbody:empty::after {
 }
 
 .btn:hover {
-  background-color: #2563eb;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
-}
-
-.btn:active {
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  background-color: #0052a3;
 }
 
 .btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-  transform: none !important;
 }
 
 .header_link:focus,
@@ -505,19 +449,8 @@ tbody:empty::after {
 .table_link:focus,
 .step-links a:focus,
 .btn:focus {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid #0066cc;
   outline-offset: 2px;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 @media (max-width: 768px) {
@@ -610,7 +543,7 @@ tbody:empty::after {
   }
   .menu_link {
     padding: 0.375rem 0.75rem;
-    font-size: 0.875rem;
+    font-size: 0.9rem;
   }
   .search_input {
     padding: 0.375rem 0.75rem;
@@ -638,7 +571,7 @@ tbody:empty::after {
     margin-bottom: 1rem;
   }
   .single_contact p {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     margin-bottom: 0.75rem;
   }
   .step-links {
@@ -654,18 +587,6 @@ tbody:empty::after {
     padding: 0.25rem 0.5rem;
     font-size: 0.75rem;
     margin: 0 0.125rem;
-  }
-  .step-links a[href*="page=1"]:first-child,
-  .step-links a[href*="page="]:last-child {
-    font-size: 0;
-  }
-  .step-links a[href*="page=1"]:first-child:before {
-    font-size: 0.875rem;
-    margin-right: 0;
-  }
-  .step-links a[href*="page="]:last-child:after {
-    font-size: 0.875rem;
-    margin-left: 0;
   }
   .content h2 {
     font-size: 1.25rem;
