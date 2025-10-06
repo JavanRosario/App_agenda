@@ -22,7 +22,7 @@ class Contact(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     description = models.TextField(blank=True, verbose_name='Descrição')
     show = models.BooleanField(default=True)
-    image = models.ImageField(blank=True, upload_to='img/%Y/%m')
+    image = models.ImageField(upload_to='img/%Y/%m', blank=True)
     category = models.ForeignKey(
         Category,
         on_delete=models.SET_NULL,
