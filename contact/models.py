@@ -14,19 +14,20 @@ class Category(models.Model):
 
 
 class Contact(models.Model):
-    first_name = models.CharField(max_length=45)
-    last_name = models.CharField(max_length=45, blank=True)
-    phone = models.CharField(max_length=45)
+    first_name = models.CharField(max_length=45, verbose_name='Nome')
+    last_name = models.CharField(
+        max_length=45, verbose_name='Sobrenome', blank=True)
+    phone = models.CharField(max_length=45, verbose_name='Telefone')
     email = models.EmailField(max_length=254)
     created_date = models.DateTimeField(default=timezone.now)
-    description = models.TextField(blank=True)
+    description = models.TextField(blank=True, verbose_name='Descrição')
     show = models.BooleanField(default=True)
     image = models.ImageField(blank=True, upload_to='img/%Y/%m')
     category = models.ForeignKey(
         Category,
         on_delete=models.SET_NULL,
         blank=True,
-        null=True,
+        null=True, verbose_name='Categoria'
     )
     owner = models.ForeignKey(
         User,
