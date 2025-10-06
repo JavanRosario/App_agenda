@@ -22,6 +22,12 @@
         <p><b>Created Date:</b>{{contact.created_date}}</p>
         <p><b>Description:</b>{{contact.description}}</p>
         <p><b>Category:</b>{{contact.category.name}}</p>
+
+        {% if contact.image %}
+            <p>
+              <img src="{{contact.image.url}}" alt="{{contact.first_name}} {{contact.last_name}}">
+            </p>
+        {% endif %}
         <div class="contact_links">
           <a class = "btn btn_link"href="{% url "contact:update" contact.id %}">Editar</a>
         </div>
