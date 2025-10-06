@@ -1,4 +1,4 @@
-import contact
+from django.contrib import messages
 from contact.models import Contact
 from contact.forms import Form
 from django.shortcuts import render, redirect, get_object_or_404
@@ -18,12 +18,14 @@ def create(request):
         }
 
         if form.is_valid():
-            contact = form.save()
-            return redirect('contact:update', contact_id=contact.pk)
+            form.save()
+            messages.success(request, 'Contato criado com sucesso')
+            return redirect('contact:index')
+
 
         return render(
             request,
-            'contact/create.html',
+            'contact/index.html',
             context,
         )
     context = {
@@ -80,6 +82,7 @@ def delete(request, contact_id):
 
     if confirmation == 'yes':
         contact.delete()
+        messages.success(request,'Contato apagado')
         return redirect('contact:index')
 
     return render(request, 'contact/single_contact.html', {'contact': contact, 'confirmation': confirmation, })
