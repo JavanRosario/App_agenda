@@ -8,6 +8,13 @@
 
   {% include "partials/_header.html" %}
 
+  <div class="alert-center">
+  {% for message in messages %}
+    <div class="custom-alert {{ message.tags }}">
+      {{ message }}
+    </div>
+  {% endfor %}
+</div>
     <main class="content">
       {% if page_obj %}
       <div class="responsive_table">
@@ -46,5 +53,6 @@
       {% endif %}
     </main>
     {% include "partials/_pagination.html" %}
+    <script src="{% static "contact/js/scripts.js" %}"></script>
   </body>
 </html>
