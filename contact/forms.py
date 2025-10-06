@@ -5,17 +5,13 @@ from .models import Contact
 
 
 class Form(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        # self.fields['first_name'].widget.attrs.update({
-        #     # 'class': 'class_a class_b',
-        # })
+    image = forms.ImageField(
+        widget=forms.FileInput(attrs={'accept': 'image/*'}))
 
     class Meta:
         model = Contact
         fields = ('first_name', 'last_name', 'phone',
-                  'email', 'description', 'category')
+                  'email', 'description', 'category', 'image')
 
     def clean(self):
         error_msg = ValidationError(
@@ -31,9 +27,5 @@ class Form(forms.ModelForm):
 
     def clean_first_name(self):
         first_name = self.cleaned_data.get('first_name')
-
-        if '#$%&*()_+!@' in first_name:
-            self.add_error('first_name', ValidationError(
-                'Sem caracteres expeciais', code='invalide'))
 
         return first_name
