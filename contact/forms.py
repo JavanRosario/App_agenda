@@ -6,7 +6,7 @@ from .models import Contact
 
 class Form(forms.ModelForm):
     image = forms.ImageField(
-        widget=forms.FileInput(attrs={'accept': 'image/*'}))
+        widget=forms.FileInput(attrs={'accept': 'image/*'},), required=False)
 
     class Meta:
         model = Contact
