@@ -8,6 +8,7 @@
     <title>{{single_title}}Agenda</title>
   </head>
   <body>
+
     {% include "partials/_header.html" %}
 
     <main class="content">
@@ -21,6 +22,19 @@
         <p><b>Created Date:</b>{{contact.created_date}}</p>
         <p><b>Description:</b>{{contact.description}}</p>
         <p><b>Category:</b>{{contact.category.name}}</p>
+        <div class="contact_links">
+          <a class = "btn btn_link"href="{% url "contact:update" contact.id %}">Editar</a>
+        </div>
+        <form action="{% url "contact:delete" contact.id %}" method = "POST">
+          {% csrf_token %}
+
+          {% if confirmation == 'no' %}
+            <input type="hidden" name="confirmation" value="yes">
+            <button class="btn btn-link" type="submit">Confirma?</button>
+          {% else %}
+            <button class="btn btn-link" type="submit">Deletar</button>
+          {% endif %}
+        </form>
       </div>
     </main>
   </body>
