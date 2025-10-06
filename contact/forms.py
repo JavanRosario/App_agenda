@@ -8,15 +8,14 @@ class Form(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.fields['first_name'].widget.attrs.update({
-            'class': 'class_a class_b',
-            'placeholder': 'primeiro nome'
-        })
-        self.fields['first_name'].help_text = 'Coloque seu nome completo'
+        # self.fields['first_name'].widget.attrs.update({
+        #     # 'class': 'class_a class_b',
+        # })
 
     class Meta:
         model = Contact
-        fields = ('first_name', 'last_name', 'phone',)
+        fields = ('first_name', 'last_name', 'phone',
+                  'email', 'description', 'category')
 
     def clean(self):
         error_msg = ValidationError(
