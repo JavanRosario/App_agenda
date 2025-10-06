@@ -292,31 +292,159 @@ body {
   border-radius: 4px;
 }
 
-.message {
+/* Enhanced Message/Alert System - Centralized */
+.message,
+.custom-alert {
   padding: 0.75rem 1rem;
   border-radius: 4px;
-  margin-bottom: 1.5rem;
+  margin: 1.5rem auto;
   font-size: 0.9rem;
   font-weight: 500;
+  font-family: "Inter", Arial, sans-serif;
   border-left: 4px solid;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  text-align: left;
 }
 
-.message.success {
+/* Alert container for better positioning */
+.alert-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Centered alert positioning - appears below header/search */
+.alert-center {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  margin: 1rem auto 2rem auto;
+  max-width: 600px;
+  padding: 0 2rem;
+}
+
+.alert-center .custom-alert,
+.alert-center .message {
+  margin: 0.5rem 0;
+  width: 100%;
+}
+
+.message.success,
+.custom-alert.success {
   background-color: #d4edda;
   color: #155724;
   border-left-color: #28a745;
 }
 
-.message.error {
+.message.error,
+.custom-alert.error {
   background-color: #f8d7da;
   color: #721c24;
   border-left-color: #dc3545;
 }
 
-.message.warning {
+.message.warning,
+.custom-alert.warning {
   background-color: #fff3cd;
   color: #856404;
   border-left-color: #ffc107;
+}
+
+.message.info,
+.custom-alert.info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border-left-color: #0066cc;
+}
+
+/* Default alert styling (neutral) */
+.custom-alert {
+  background-color: #f8f9fa;
+  color: #333;
+  border-left-color: #666;
+}
+
+/* Alert with close button */
+.custom-alert.dismissible {
+  padding-right: 3rem;
+}
+
+.custom-alert .close-btn {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.7;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-alert .close-btn:hover {
+  opacity: 1;
+}
+
+/* Alert with icon */
+.custom-alert.with-icon {
+  padding-left: 3rem;
+}
+
+.custom-alert .alert-icon {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Fade out animation for dismissible alerts */
+.custom-alert.fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Compact alert variant */
+.custom-alert.compact {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Toast-style alerts (top-right corner) */
+.alert-toast-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  max-width: 350px;
+}
+
+.alert-toast-container .custom-alert {
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: none;
+}
+
+/* Inline alerts (within content flow) */
+.alert-inline {
+  margin: 1rem 0;
+  max-width: none;
 }
 
 @media (max-width: 768px) {
@@ -326,6 +454,11 @@ body {
   }
 
   .content {
+    padding: 0 1rem;
+  }
+
+  .alert-wrapper,
+  .alert-center {
     padding: 0 1rem;
   }
 
@@ -364,6 +497,23 @@ body {
   .contacts_table {
     min-width: 500px;
   }
+
+  /* Mobile alert adjustments */
+  .alert-toast-container {
+    top: 0.5rem;
+    right: 0.5rem;
+    left: 0.5rem;
+    max-width: none;
+  }
+
+  .custom-alert.with-icon {
+    padding-left: 2.5rem;
+  }
+
+  .custom-alert .alert-icon {
+    left: 0.75rem;
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -379,4 +529,28 @@ body {
     padding: 0.625rem 1rem;
     font-size: 0.8rem;
   }
+
+  .custom-alert {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.85rem;
+  }
+
+  .custom-alert.dismissible {
+    padding-right: 2.5rem;
+  }
+
+  .custom-alert .close-btn {
+    right: 0.75rem;
+    width: 18px;
+    height: 18px;
+    font-size: 1rem;
+  }
+
+  .alert-center {
+    padding: 0 0.5rem;
+  }
+}
+.alert-container.in-content {
+  margin-bottom: 2rem;
+  margin-top: 30px;
 }
