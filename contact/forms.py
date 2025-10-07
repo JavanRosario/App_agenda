@@ -1,4 +1,5 @@
 # type: ignore
+from cProfile import label
 from django import forms
 from django.core.exceptions import ValidationError
 from .models import Contact
@@ -6,7 +7,8 @@ from .models import Contact
 
 class Form(forms.ModelForm):
     image = forms.ImageField(
-        widget=forms.FileInput(attrs={'accept': 'image/*'},), required=False)
+        widget=forms.FileInput(attrs={'accept': 'image/*'},), required=False, label='Imagem')
+
 
     class Meta:
         model = Contact

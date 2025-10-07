@@ -79,6 +79,7 @@ body {
   background-color: #fff;
   color: #333;
   width: 100%;
+  resize: none;
 }
 
 .search_input {
