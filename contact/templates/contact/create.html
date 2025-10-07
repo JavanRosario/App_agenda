@@ -1,5 +1,12 @@
 {% include "partials/_head.html" %}
 {% include "partials/_header.html" %}
+  <div class="alert-center">
+  {% for message in messages %}
+    <div class="custom-alert {{ message.tags }}">
+      {{ message }}
+    </div>
+  {% endfor %}
+</div>
 <main class="content">
   <h2>Cadastro</h2>
   <div class="form_warper">
@@ -42,3 +49,4 @@
     </form>
   </div>
 </main>
+
