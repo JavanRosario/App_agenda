@@ -30,7 +30,9 @@ body {
   font-weight: 600;
   color: #222;
 }
-
+.header_link {
+  font-size: 28px;
+}
 .header_link,
 .table_link {
   color: #0066cc;
@@ -554,4 +556,10 @@ body {
 .alert-container.in-content {
   margin-bottom: 2rem;
   margin-top: 30px;
+}
+
+.data p {
+  font-size: 15px;
+  color: #666;
+  font-weight: 500;
 }
