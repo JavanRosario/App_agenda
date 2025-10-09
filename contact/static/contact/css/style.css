@@ -30,9 +30,11 @@ body {
   font-weight: 600;
   color: #222;
 }
+
 .header_link {
   font-size: 28px;
 }
+
 .header_link,
 .table_link {
   color: #0066cc;
@@ -295,7 +297,6 @@ body {
   border-radius: 4px;
 }
 
-/* Enhanced Message/Alert System - Centralized */
 .message,
 .custom-alert {
   padding: 0.75rem 1rem;
@@ -307,19 +308,17 @@ body {
   border-left: 4px solid;
   position: relative;
   transition: all 0.3s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(255, 18, 18, 0.884);
   max-width: 600px;
   text-align: left;
 }
 
-/* Alert container for better positioning */
 .alert-wrapper {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
-/* Centered alert positioning - appears below header/search */
 .alert-center {
   position: relative;
   top: 0;
@@ -365,14 +364,12 @@ body {
   border-left-color: #0066cc;
 }
 
-/* Default alert styling (neutral) */
 .custom-alert {
   background-color: #f8f9fa;
   color: #333;
   border-left-color: #666;
 }
 
-/* Alert with close button */
 .custom-alert.dismissible {
   padding-right: 3rem;
 }
@@ -402,7 +399,6 @@ body {
   opacity: 1;
 }
 
-/* Alert with icon */
 .custom-alert.with-icon {
   padding-left: 3rem;
 }
@@ -416,20 +412,17 @@ body {
   font-weight: bold;
 }
 
-/* Fade out animation for dismissible alerts */
 .custom-alert.fade-out {
   opacity: 0;
   transform: translateY(-10px);
 }
 
-/* Compact alert variant */
 .custom-alert.compact {
   padding: 0.5rem 0.75rem;
   font-size: 0.8rem;
   margin-bottom: 1rem;
 }
 
-/* Toast-style alerts (top-right corner) */
 .alert-toast-container {
   position: fixed;
   top: 1rem;
@@ -444,10 +437,58 @@ body {
   max-width: none;
 }
 
-/* Inline alerts (within content flow) */
 .alert-inline {
   margin: 1rem 0;
   max-width: none;
+}
+
+.alert-container.in-content {
+  margin-bottom: 2rem;
+  margin-top: 30px;
+}
+
+.data p {
+  font-size: 15px;
+  color: #666;
+  font-weight: 500;
+}
+
+.form_group img,
+.single_contact img,
+.table_cel img {
+  max-width: 150px;
+  max-height: 150px;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.table_cel img {
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 50%;
+}
+
+.single_contact img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+ul.errorlist {
+  background-color: #ffe5e5;
+  color: #ff0000;
+  border-left: 4px solid #ff0000;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+  list-style: none;
+}
+
+ul.errorlist li {
+  margin: 0;
 }
 
 @media (max-width: 768px) {
@@ -501,7 +542,6 @@ body {
     min-width: 500px;
   }
 
-  /* Mobile alert adjustments */
   .alert-toast-container {
     top: 0.5rem;
     right: 0.5rem;
@@ -516,6 +556,17 @@ body {
   .custom-alert .alert-icon {
     left: 0.75rem;
     font-size: 1rem;
+  }
+
+  .form_group img,
+  .single_contact img {
+    max-width: 120px;
+    max-height: 120px;
+  }
+
+  .table_cel img {
+    max-width: 40px;
+    max-height: 40px;
   }
 }
 
@@ -544,7 +595,7 @@ body {
 
   .custom-alert .close-btn {
     right: 0.75rem;
-    width: 18px;
+    width: 18px;    
     height: 18px;
     font-size: 1rem;
   }
@@ -552,14 +603,15 @@ body {
   .alert-center {
     padding: 0 0.5rem;
   }
-}
-.alert-container.in-content {
-  margin-bottom: 2rem;
-  margin-top: 30px;
-}
 
-.data p {
-  font-size: 15px;
-  color: #666;
-  font-weight: 500;
+  .form_group img,
+  .single_contact img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  .table_cel img {
+    max-width: 35px;
+    max-height: 35px;
+  }
 }
