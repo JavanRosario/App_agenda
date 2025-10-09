@@ -1,14 +1,14 @@
 # type: ignore
-from cProfile import label
 from django import forms
 from django.core.exceptions import ValidationError
 from .models import Contact
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 
 class Form(forms.ModelForm):
     image = forms.ImageField(
         widget=forms.FileInput(attrs={'accept': 'image/*'},), required=False, label='Imagem')
-
 
     class Meta:
         model = Contact
@@ -31,3 +31,22 @@ class Form(forms.ModelForm):
         first_name = self.cleaned_data.get('first_name')
 
         return first_name
+
+
+class OwnerForm(UserCreationForm):
+    first_name = forms.CharField(required=True, label='Primeiro nome')
+    last_name = forms.CharField(required=True, label='Sobrenome')
+    email = forms.EmailField(required=True)
+
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'email',
+                  'username', 'password1', 'password2')
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+
+        if User.objects.filter(email=email).exists():
+            self.add_error('email', ValidationError('Já existe esse email'))
+
+        return email
